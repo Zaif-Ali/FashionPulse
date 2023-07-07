@@ -6,6 +6,7 @@ import {
 import { NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ToolTip_BTN from "../Buttons/ToolTip_BTN";
 
 interface Props {}
 
@@ -58,15 +59,20 @@ const Footer: NextPage<Props> = ({}) => {
               {data_socialMedia.map((data: socialMediaLinks, index: number) => {
                 return (
                   <li key={index}>
-                    <Link
-                      href={data.linkUrl}
-                      rel="noreferrer"
-                      target="_blank"
-                      className="text-gray-700 transition hover:text-gray-700/75"
-                    >
-                      <span className="sr-only">{data.name}</span>
-                      <data.icon className="h-6 w-6" />
-                    </Link>
+                    <ToolTip_BTN
+                      childElement={
+                        <Link
+                          href={data.linkUrl}
+                          rel="noreferrer"
+                          target="_blank"
+                          className="text-gray-700 transition hover:text-gray-700/75"
+                        >
+                          <span className="sr-only">{data.name}</span>
+                          <data.icon className="h-6 w-6 " />
+                        </Link>
+                      }
+                      ToolTipName={data.name}
+                    />
                   </li>
                 );
               })}

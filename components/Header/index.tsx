@@ -8,6 +8,7 @@ import { GrMenu } from "react-icons/gr";
 import { useClickOutside, useViewportSize } from "@mantine/hooks";
 import Menu from "./Menu";
 import Banner from "../Banner";
+import ToolTip_BTN from "../Buttons/ToolTip_BTN";
 
 const Header = () => {
   const [isNavbarHidden, setIsNavbarHidden] = useState(true);
@@ -68,17 +69,26 @@ const Header = () => {
           </Link>
           <div className="flex lg:order-3">
             <Link href="/cart">
-              <div className="w-8 lg:w-12 h-8 lg:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
-                <BsCart className="text-[20px]" />
+              <ToolTip_BTN
+                ToolTipName="Cart"
+                childElement={
+                  <div className="w-8 lg:w-12 h-8 lg:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
+                    <BsCart className="text-[20px]" />
 
-                <div className="h-[14px] lg:h-[18px] min-w-[14px] lg:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 lg:left-7 text-white text-[10px] lg:text-[12px] flex justify-center items-center px-[2px] lg:px-[5px]">
-                  4
-                </div>
-              </div>
+                    <div className="h-[14px] lg:h-[18px] min-w-[14px] lg:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 lg:left-7 text-white text-[10px] lg:text-[12px] flex justify-center items-center px-[2px] lg:px-[5px]">
+                      4
+                    </div>
+                  </div>
+                }
+              />
             </Link>
             <button type="button" className="text-white   text-sm px-2 py-2   ">
-              <FcGoogle className="text-[25px]" />
+              <ToolTip_BTN
+                childElement={<FcGoogle className="text-[25px]" />}
+                ToolTipName="Sign-in"
+              />
             </button>
+
             <button
               data-collapse-toggle="navbar-default"
               onClick={toggleNavbar}
