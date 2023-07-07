@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Category_Menu from "./Category_Menu";
+import { MenCategories, categories } from "@/constants/Header";
 
 interface Props {
   isNavbarHidden: boolean;
@@ -16,14 +17,30 @@ interface MenuLink {
 export const menuLinks: MenuLink[] = [
   { title: "Home", url: "/", dropdown: false },
   {
+    title: "Mens",
+    url: "/",
+    dropdown: true,
+    dropdownElement: <Category_Menu categorie={MenCategories} title={"Mens"} />,
+  },
+  {
+    title: "Women's",
+    url: "/",
+    dropdown: true,
+    dropdownElement: (
+      <Category_Menu categorie={categories} title=" Women's" />
+    ),
+  },
+  { title: "Sale", url: "/sale", dropdown: false },
+  { title: "New Arrival", url: "/new-arrival", dropdown: false },
+  {
     title: "Category",
     url: "/",
     dropdown: true,
-    dropdownElement: <Category_Menu />,
-  },
-  { title: "Shop", url: "/shop", dropdown: false },
-  { title: "New Arrival", url: "/new-arrival", dropdown: false },
-  { title: "About ", url: "/about", dropdown: false },
+    dropdownElement: (
+      <Category_Menu categorie={categories} title=" Category's" />
+      ),
+    },
+    { title: "About ", url: "/about", dropdown: false },
 ];
 
 const Menu: NextPage<Props> = ({ isNavbarHidden, setIsNavbarHidden }) => {
@@ -43,8 +60,9 @@ const Menu: NextPage<Props> = ({ isNavbarHidden, setIsNavbarHidden }) => {
               <li
                 key={index}
                 className="
-                block py-2 pl-3 pr-1  
+                 py-2 pl-3 pr-1  
                 rounded lg:bg-transparent font-semibold lg:text-lg
+                
               "
               >
                 {link.dropdownElement}
