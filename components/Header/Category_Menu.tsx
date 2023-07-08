@@ -14,9 +14,11 @@ import { ChevronDown } from "lucide-react";
 const Category_Menu = ({
   categorie,
   title,
+  url,
 }: {
   categorie: categorySection[];
   title: string;
+  url?: string;
 }) => {
   // Get teh view port size of the screen
   const { width } = useViewportSize();
@@ -73,7 +75,7 @@ const Category_Menu = ({
               className=" px-0 py-0  text-textColor hover:text-primary
                rounded md:bg-transparent font-semibold lg:text-lg "
             >
-              <Link href={`/view/${title.toLowerCase()}`}>{title}</Link>
+              {url ? <Link href={`${url}`}>{title}</Link> : title}
 
               <ChevronDown
                 className="relative top-[1px] ml-3 h-4 w-4 transition duration-200 group-data-[state=open]:rotate-180 "

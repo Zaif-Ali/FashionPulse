@@ -59,7 +59,7 @@ const Header = () => {
             <Image
               width={28}
               height={28}
-              src={"./images/logo.svg"}
+              src={"/images/logo.svg"}
               className="h-8 mr-3"
               alt="Flowbite Logo"
             />

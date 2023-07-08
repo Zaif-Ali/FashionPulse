@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import Wrapper from "./Wrapper";
+import Wrapper from "../Wrapper";
 import { FcGoogle } from "react-icons/fc";
-import ToolTip_BTN from "./Buttons/ToolTip_BTN";
+import ToolTip_BTN from "../Buttons/ToolTip_BTN";
 
 interface Props {}
 

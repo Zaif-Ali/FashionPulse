@@ -19,16 +19,16 @@ export const menuLinks: MenuLink[] = [
   { title: "Home", url: "/", dropdown: false, isprotected: false },
   {
     title: "Mens",
-    url: "/",
+    url: "/view/mens",
     dropdown: true,
-    dropdownElement: <Category_Menu categorie={MenCategories} title={"Mens"} />,
+    dropdownElement: <Category_Menu categorie={MenCategories} title={"Mens"} url={"/view/mens"}  />,
     isprotected: false,
   },
   {
     title: "Women's",
     url: "/",
     dropdown: true,
-    dropdownElement: <Category_Menu categorie={categories} title=" Women's" />,
+    dropdownElement: <Category_Menu categorie={categories} title=" Women's" url={"/view/womens"}/>,
     isprotected: false,
   },
   { title: "Sale", url: "/sale", dropdown: false, isprotected: false },
@@ -43,7 +43,7 @@ export const menuLinks: MenuLink[] = [
     url: "/",
     dropdown: true,
     dropdownElement: (
-      <Category_Menu categorie={categories} title=" Category's" />
+      <Category_Menu categorie={categories} title=" Category's"  />
     ),
     isprotected: false,
   },

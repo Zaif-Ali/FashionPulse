@@ -49,19 +49,19 @@ export const Menimages: DataProp[] = [
 
 export const Watchimages: DataProp[] = [
     {
-        src: "watch1.jpg",
+        src: "/watch1.jpg",
         alt: "",
         title: "Digital",
         link: "#",
     },
     {
-        src: "watch2.jpg",
+        src: "/watch2.jpg",
         alt: "",
         title: "Formel",
         link: "#",
     },
     {
-        src: "watch3.jpg",
+        src: "/watch3.jpg",
         alt: "",
         title: "Chain Watches",
         link: "#",

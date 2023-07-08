@@ -8,7 +8,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
     <>
       <Header />
       <div>{children}</div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

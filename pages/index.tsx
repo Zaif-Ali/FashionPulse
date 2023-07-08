@@ -1,6 +1,5 @@
 import HeroCarousel from "@/components/Carousel/HeroCarousel";
 import ImageGrid from "@/components/ImageGrid";
-import Intouch from "@/components/Intouch";
 import { Menimages, Watchimages, Womenimages } from "@/constants/ImageGrid";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -67,9 +66,7 @@ export default function Home() {
         <div data-aos="fade-up">
           <ImageGrid data={Watchimages} position={0} straight={true} />
         </div>
-        <div data-aos="fade-up">
-          <Intouch />
-        </div>
+      
       </main>
     </>
   );
