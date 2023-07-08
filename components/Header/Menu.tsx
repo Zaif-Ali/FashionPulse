@@ -13,34 +13,42 @@ interface MenuLink {
   url: string;
   dropdown: boolean;
   dropdownElement?: React.JSX.Element;
+  isprotected: boolean;
 }
 export const menuLinks: MenuLink[] = [
-  { title: "Home", url: "/", dropdown: false },
+  { title: "Home", url: "/", dropdown: false, isprotected: false },
   {
     title: "Mens",
     url: "/",
     dropdown: true,
     dropdownElement: <Category_Menu categorie={MenCategories} title={"Mens"} />,
+    isprotected: false,
   },
   {
     title: "Women's",
     url: "/",
     dropdown: true,
-    dropdownElement: (
-      <Category_Menu categorie={categories} title=" Women's" />
-    ),
+    dropdownElement: <Category_Menu categorie={categories} title=" Women's" />,
+    isprotected: false,
   },
-  { title: "Sale", url: "/sale", dropdown: false },
-  { title: "New Arrival", url: "/new-arrival", dropdown: false },
+  { title: "Sale", url: "/sale", dropdown: false, isprotected: false },
+  {
+    title: "New Arrival",
+    url: "/new-arrival",
+    dropdown: false,
+    isprotected: false,
+  },
   {
     title: "Category",
     url: "/",
     dropdown: true,
     dropdownElement: (
       <Category_Menu categorie={categories} title=" Category's" />
-      ),
-    },
-    { title: "About ", url: "/about", dropdown: false },
+    ),
+    isprotected: false,
+  },
+  { title: "About ", url: "/about", dropdown: false, isprotected: false },
+  { title: "Admin ", url: "/admin", dropdown: false, isprotected:false },
 ];
 
 const Menu: NextPage<Props> = ({ isNavbarHidden, setIsNavbarHidden }) => {
